@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPS SURA - Portal Oficial de Servicios en Línea y Afiliados</title>
+  <meta name="description" content="Bienvenido al portal oficial de EPS SURA. Solicita citas médicas, radica autorizaciones, descarga certificados de afiliación PBS/PAC y ubica tu red de atención en un solo clic.">
+  <meta name="keywords" content="EPS SURA, Citas Sura, Autorizaciones EPS Sura, Certificado Afiliacion Sura, Urgencias Sura, Portal Afiliados Sura">
+
+  <!-- Favicon Oficial SURA Ala -->
+  <link rel="icon" type="image/png" href="imagenes/ala.png">
+
+  <!-- Icons FontAwesome & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+  <!-- Topbar Oficial EPS SURA (Image 2) -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-left-links">
+        <button type="button" class="topbar-link" data-open-modal="modal-lengua-senas" style="background:none; border:none; cursor:pointer; font-family:inherit;">
+          <i class="fas fa-hands-asl-interpreting"></i> LENGUA DE SEÑAS
+        </button>
+        <span class="topbar-divider">|</span>
+        <span class="topbar-link"><i class="fas fa-globe"></i> ESPAÑOL <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></span>
+      </div>
+      <div class="topbar-right-links">
+        <a href="#ley-transparencia" class="topbar-link">Ley de transparencia</a>
+        <a href="#faq" class="topbar-link">Preguntas frecuentes</a>
+        <a href="#pqrs" class="topbar-link">Escríbenos tus PQRS</a>
+        <a href="#contacto" class="topbar-link">Canales de contacto</a>
+        <a href="#solicitar-clave" class="topbar-link">Solicitar clave</a>
+        
+        <button class="btn-dark-login" id="btn-open-login" data-open-modal="modal-login">
+          <i class="fas fa-user-circle"></i> INICIAR SESIÓN <i class="fas fa-caret-down"></i>
+        </button>
+
+        <button class="accessibility-btn" id="theme-toggle-btn" title="Cambiar Modo Oscuro">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Principal con Cinta Gris (Logo Blanco Grande + Categorías + Turno Virtual + Línea Multicolor) -->
+  <header class="navbar-sticky">
+    <div class="category-nav-wrapper">
+      <div class="container category-nav-content">
+        <!-- Logo Blanco Más Grande -->
+        <a href="#" class="brand-logo-ribbon" title="EPS SURA - Inicio">
+          <img src="imagenes/logo-sura-white.png" alt="EPS SURA" class="ribbon-logo-img">
+        </a>
+
+        <ul class="category-nav-links" id="category-nav-links">
+          <li class="active"><a href="#inicio">INICIO</a></li>
+          <li><a href="#servicios">AFILIADOS</a></li>
+          <li><a href="#empleadores">EMPLEADORES</a></li>
+          <li><a href="#independientes">INDEPENDIENTES</a></li>
+          <li><a href="#asesores">ASESORES COMERCIALES</a></li>
+          <li><a href="#prestadores">PRESTADORES DE SERVICIO</a></li>
+          <li><a href="#pac">PAC</a></li>
+        </ul>
+
+        <div class="nav-actions-ribbon">
+          <div id="user-badge-container" style="display:none; align-items:center; gap:0.6rem;">
+            <div class="hero-avatar" style="width:34px; height:34px; font-size:0.9rem;" class="btn-open-digital-card" title="Ver Carné Virtual">
+              M
+            </div>
+            <button class="btn-outline" id="logout-btn" style="padding:0.3rem 0.7rem; font-size:0.75rem; border-color:#FFF; color:#FFF;">
+              <i class="fas fa-sign-out-alt"></i> Salir
+            </button>
+          </div>
+
+          <button class="btn-secondary" data-open-modal="modal-turno-virtual" style="padding:0.45rem 1.1rem; font-size:0.82rem;">
+            <i class="fas fa-ticket-alt"></i> Turno Virtual
+          </button>
+          <button class="mobile-toggle" id="mobile-menu-toggle" style="color:#FFF;">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra Secundaria de Accesos Directos -->
+    <div class="subnav-bar">
+      <div class="container subnav-content">
+        <a href="#servicios" class="subnav-item"><i class="fas fa-th-large"></i> Servicios a un Clic</a>
+        <a href="#citas" class="subnav-item"><i class="fas fa-calendar-check"></i> Citas Médicas</a>
+        <a href="#autorizaciones" class="subnav-item"><i class="fas fa-file-signature"></i> Autorizaciones</a>
+        <a href="#certificados" class="subnav-item"><i class="fas fa-file-pdf"></i> Certificados</a>
+        <a href="#directorio" class="subnav-item"><i class="fas fa-hospital"></i> Red de Atención</a>
+        <a href="#planes" class="subnav-item"><i class="fas fa-shield-alt"></i> Planes SURA</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section Principal -->
+  <section class="hero-section">
+    <div class="hero-bg-shapes">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div>
+        <span class="hero-badge">
+          <i class="fas fa-shield-alt"></i> Tu salud en manos expertas sin salir de casa
+        </span>
+        <h1 class="hero-title">
+          Gestiona tus trámites de salud en <span>EPS SURA</span>
+        </h1>
+        <p class="hero-subtitle">
+          Agenda citas médicas, consulta el estado de tus autorizaciones, descarga tu carné digital y encuentra atención de urgencias fácil y rápido.
+        </p>
+
+        <!-- Buscador Rápido -->
+        <div class="hero-search-box">
+          <i class="fas fa-search" style="color:var(--sura-blue); margin-left:1rem; font-size:1.1rem;"></i>
+          <input type="text" id="hero-quick-input" placeholder="¿Qué trámite deseas realizar hoy? Ej: Cita, Autorización...">
+          <button type="button" onclick="window.location.hash = '#servicios'">
+            Buscar <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Preview Tarjeta Afiliado -->
+      <div class="hero-visual">
+        <div class="hero-card-preview">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:0.8rem;">
+            <div class="hero-user-badge" style="margin-bottom:0;">
+              <div class="hero-avatar">M</div>
+              <div class="hero-user-info">
+                <h4 id="hero-user-name">MARÍA ALEJANDRA GÓMEZ PÉREZ</h4>
+                <p id="hero-user-doc">CC 1.020.456.789</p>
+              </div>
+            </div>
+            <!-- Imagen oficial ala.png -->
+            <img src="imagenes/ala.png" alt="SURA Wing Logo" style="height:46px; width:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+          </div>
+
+          <div class="hero-quick-stats">
+            <div class="stat-box">
+              <i class="fas fa-calendar-check"></i>
+              <span>Cita Próxima</span>
+              <strong id="hero-stat-cita">25 Ago - 9:30 AM</strong>
+            </div>
+            <div class="stat-box">
+              <i class="fas fa-file-medical-alt"></i>
+              <span>Autorización</span>
+              <strong id="hero-stat-auth" style="color:var(--sura-yellow);">1 Aprobada</strong>
+            </div>
+            <div class="stat-box">
+              <i class="fas fa-hospital-user"></i>
+              <span>IPS Asignada</span>
+              <strong>SURA San Diego</strong>
+            </div>
+            <div class="stat-box">
+              <i class="fas fa-certificate"></i>
+              <span>Estado Afiliación</span>
+              <strong style="color:#00A859;">Activo (Cotizante)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de Servicios a un Clic -->
+  <section class="container services-section" id="servicios">
+    <div class="section-divider-heading">
+      <span>OPCIONES A UN CLIC</span>
+    </div>
+    <div class="services-grid">
+      
+      <div class="service-card" data-open-modal="modal-citas-wizard">
+        <div class="service-icon">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3>Citas Médicas</h3>
+        <p>Solicita, consulta o cancela tus citas en línea</p>
+      </div>
+
+      <div class="service-card" onclick="window.location.hash = '#autorizaciones'">
+        <div class="service-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3>Autorizaciones</h3>
+        <p>Radica órdenes médicas y consulta el estado</p>
+      </div>
+
+      <div class="service-card" onclick="window.location.hash = '#certificados'">
+        <div class="service-icon">
+          <i class="fas fa-file-download"></i>
+        </div>
+        <h3>Certificados</h3>
+        <p>Descarga tu carné digital y certificado PBS</p>
+      </div>
+
+      <div class="service-card" data-open-modal="modal-reembolsos">
+        <div class="service-icon">
+          <i class="fas fa-receipt"></i>
+        </div>
+        <h3>Pagos y Reembolsos</h3>
+        <p>Cuotas moderadoras y solicitudes de reembolso</p>
+      </div>
+
+      <div class="service-card" onclick="window.location.hash = '#directorio'">
+        <div class="service-icon">
+          <i class="fas fa-ambulance"></i>
+        </div>
+        <h3>Urgencias y Red</h3>
+        <p>Ubica clínicas, sedes y farmacias cercanas</p>
+      </div>
+
+      <div class="service-card" data-open-modal="modal-turno-virtual">
+        <div class="service-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h3>Turno Virtual</h3>
+        <p>Agenda tu turno para atención presencial</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Módulo Interactivo Principal: Pestañas de Servicios -->
+  <section class="container" style="margin-bottom: 5rem;">
+    
+    <!-- Pestaña 1: Citas Médicas -->
+    <div id="citas" class="tab-content" style="display:block; background:var(--bg-card); padding:2.5rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-md); margin-bottom:3rem;">
+      <div class="section-header" style="text-align:left; margin-bottom:1.8rem;">
+        <span class="section-tag"><i class="fas fa-user-md"></i> Agendamiento Inteligente</span>
+        <h2 class="section-title">Gestión de Citas Médicas</h2>
+        <p class="section-subtitle" style="margin:0;">Programa tus citas con médico general, especialistas, odontología y pediatría en nuestras sedes SURA.</p>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+        <h3 style="color:var(--sura-navy);"><i class="fas fa-list-ul"></i> Tus Citas Programadas</h3>
+        <button class="btn-primary" id="open-citas-wizard">
+          <i class="fas fa-plus-circle"></i> Solicitar Nueva Cita
+        </button>
+      </div>
+
+      <div id="appointments-list-container">
+        <!-- Generado dinámicamente desde citas.js -->
+      </div>
+    </div>
+
+    <!-- Pestaña 2: Autorizaciones -->
+    <div id="autorizaciones" class="tab-content" style="background:var(--bg-card); padding:2.5rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-md); margin-bottom:3rem;">
+      <div class="section-header" style="text-align:left; margin-bottom:1.8rem;">
+        <span class="section-tag"><i class="fas fa-file-medical"></i> Trámites en Línea</span>
+        <h2 class="section-title">Consulta y Radicación de Autorizaciones</h2>
+        <p class="section-subtitle" style="margin:0;">Rastrea en tiempo real la auditoría de tus órdenes de exámenes, cirugías y terapias.</p>
+      </div>
+
+      <div class="form-row" style="margin-bottom:2rem;">
+        <div style="background:var(--bg-main); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+          <h4 style="color:var(--sura-navy); margin-bottom:0.8rem;"><i class="fas fa-search"></i> Consultar Estado por Radicado</h4>
+          <form id="search-auth-form">
+            <div class="form-group">
+              <label class="form-label">Número de Radicado (Ej: AUT-2026-8819)</label>
+              <input type="text" class="form-control" id="auth-search-code" placeholder="AUT-2026-8819" value="AUT-2026-8819">
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+              <i class="fas fa-search"></i> Buscar Autorización
+            </button>
+          </form>
+        </div>
+
+        <div style="background:linear-gradient(135deg, rgba(0,51,102,0.05), rgba(0,163,224,0.05)); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--sura-blue); display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <h4 style="color:var(--sura-navy); margin-bottom:0.6rem;"><i class="fas fa-file-upload"></i> ¿Tienes una nueva orden médica?</h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:1rem;">Radica tu fórmula u orden médica escaneada o en foto clara para iniciar el proceso de auditoría clínica en 24 horas.</p>
+          </div>
+          <button class="btn-secondary" data-open-modal="modal-radicar-auth" style="justify-content:center;">
+            <i class="fas fa-cloud-upload-alt"></i> Radicar Nueva Autorización
+          </button>
+        </div>
+      </div>
+
+      <div id="auth-search-result">
+        <!-- Renderizado dinámico desde autorizaciones.js -->
+      </div>
+    </div>
+
+    <!-- Pestaña 3: Certificados -->
+    <div id="certificados" class="tab-content" style="background:var(--bg-card); padding:2.5rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-md); margin-bottom:3rem;">
+      <div class="section-header" style="text-align:left; margin-bottom:1.8rem;">
+        <span class="section-tag"><i class="fas fa-certificate"></i> Documentos Oficiales</span>
+        <h2 class="section-title">Generación Inmediata de Certificados</h2>
+        <p class="section-subtitle" style="margin:0;">Descarga tus certificaciones con código QR y validación oficial en formato digital listo para imprimir.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem;">
+        <div style="background:var(--bg-main); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
+          <i class="fas fa-shield-alt" style="font-size:2.5rem; color:var(--sura-navy); margin-bottom:1rem;"></i>
+          <h4>Certificado Afiliación PBS</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.2rem;">Constancia de cotización activa al Plan de Beneficios en Salud.</p>
+          <button class="btn-primary btn-generate-cert" data-cert-type="pbs" style="width:100%; justify-content:center;">
+            <i class="fas fa-eye"></i> Generar Certificado
+          </button>
+        </div>
+
+        <div style="background:var(--bg-main); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
+          <i class="fas fa-star" style="font-size:2.5rem; color:var(--sura-yellow); margin-bottom:1rem;"></i>
+          <h4>Certificado Plan PAC</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.2rem;">Certificación de cobertura del Plan Complementario Especializado.</p>
+          <button class="btn-secondary btn-generate-cert" data-cert-type="pac" style="width:100%; justify-content:center;">
+            <i class="fas fa-eye"></i> Generar Certificado
+          </button>
+        </div>
+
+        <div style="background:var(--bg-main); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
+          <i class="fas fa-id-card" style="font-size:2.5rem; color:var(--sura-blue); margin-bottom:1rem;"></i>
+          <h4>Carné Virtual de Salud</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.2rem;">Visualiza y guarda tu carné de afiliado con código QR para urgencias.</p>
+          <button class="btn-outline btn-open-digital-card" style="width:100%; justify-content:center;">
+            <i class="fas fa-qrcode"></i> Ver Carné Digital
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pestaña 4: Directorio y Red de Atención -->
+    <div id="directorio" class="tab-content" style="background:var(--bg-card); padding:2.5rem; border-radius:var(--radius-lg); border:1px solid var(--border-color); box-shadow:var(--shadow-md);">
+      <div class="section-header" style="text-align:left; margin-bottom:1.8rem;">
+        <span class="section-tag"><i class="fas fa-map-marked-alt"></i> Cobertura Nacional</span>
+        <h2 class="section-title">Buscador de Red Médica y Sedes SURA</h2>
+        <p class="section-subtitle" style="margin:0;">Filtra por ciudad, servicio de urgencias 24 horas, consulta externa o farmacias de turno.</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="form-row" style="margin-bottom:1.5rem;">
+        <div class="form-group">
+          <label class="form-label"><i class="fas fa-city"></i> Ciudad</label>
+          <select class="form-control" id="directory-city-filter">
+            <option value="">Todas las ciudades</option>
+            <option value="Medellín">Medellín</option>
+            <option value="Bogotá">Bogotá</option>
+            <option value="Cartagena">Cartagena</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label"><i class="fas fa-filter"></i> Tipo de Atención</label>
+          <select class="form-control" id="directory-type-filter">
+            <option value="">Todos los tipos</option>
+            <option value="Urgencias">Urgencias 24h</option>
+            <option value="Consulta">Consulta Externa</option>
+            <option value="Odontología">Odontología</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:2rem;">
+        <input type="text" class="form-control" id="directory-search-input" placeholder="Escribe el nombre de la sede, especialidad o dirección...">
+      </div>
+
+      <div id="directory-grid-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+        <!-- Cargado dinámicamente desde directorio.js -->
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Modales de la Aplicación -->
+
+  <!-- Modal 1: Login de Afiliados -->
+  <div class="modal-overlay" id="modal-login">
+    <div class="modal-container" style="max-width:440px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-user-shield"></i> Portal de Afiliados SURA</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label">Tipo de Documento</label>
+            <select class="form-control" id="login-doc-type">
+              <option value="CC">Cédula de Ciudadanía (CC)</option>
+              <option value="TI">Tarjeta de Identidad (TI)</option>
+              <option value="CE">Cédula de Extranjería (CE)</option>
+              <option value="PA">Pasaporte (PA)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Número de Documento</label>
+            <input type="text" class="form-control" id="login-doc-num" placeholder="Ej: 1020456789" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:1rem;">
+            <i class="fas fa-sign-in-alt"></i> Ingresar a mi Portal
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Wizard Agendamiento de Citas -->
+  <div class="modal-overlay" id="modal-citas-wizard">
+    <div class="modal-container" style="max-width:720px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-calendar-plus"></i> Agendar Cita Médica</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- Indicador de pasos -->
+        <div class="stepper-header">
+          <div class="step-item active" id="step-indicator-1">
+            <div class="step-circle">1</div>
+            <span class="step-title">Especialidad</span>
+          </div>
+          <div class="step-item" id="step-indicator-2">
+            <div class="step-circle">2</div>
+            <span class="step-title">Fecha y Horario</span>
+          </div>
+          <div class="step-item" id="step-indicator-3">
+            <div class="step-circle">3</div>
+            <span class="step-title">Confirmación</span>
+          </div>
+        </div>
+
+        <!-- Paso 1 -->
+        <div id="wizard-step-1">
+          <div class="form-group">
+            <label class="form-label">Selecciona la Especialidad</label>
+            <select class="form-control" id="cita-especialidad">
+              <option value="">-- Elige una opción --</option>
+              <option value="medicina_general">Medicina General</option>
+              <option value="odontologia">Odontología General</option>
+              <option value="pediatria">Pediatría</option>
+              <option value="optometria">Optometría</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Selecciona Profesional Médico</label>
+            <select class="form-control" id="cita-profesional">
+              <option value="">-- Primero elige especialidad --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Sede de Atención</label>
+            <select class="form-control" id="cita-sede">
+              <option value="">-- Selecciona la sede conveniente --</option>
+              <option value="santiago">SURA San Diego - Medellín</option>
+              <option value="poblado">SURA El Poblado - Medellín</option>
+              <option value="calle100">SURA Calle 100 - Bogotá</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div id="wizard-step-2" style="display:none;">
+          <h4 style="color:var(--sura-navy); margin-bottom:0.5rem;">Horarios Disponibles</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary);">Haz clic sobre un horario para seleccionar tu cita:</p>
+          <div id="calendar-slots-grid" class="calendar-grid">
+            <!-- Cargado por JS -->
+          </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div id="wizard-step-3" style="display:none;">
+          <div id="cita-summary-box">
+            <!-- Carga resumen -->
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn-outline" id="citas-prev-btn" style="display:none;">Anterior</button>
+        <button class="btn-primary" id="citas-next-btn">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Carné Digital -->
+  <div class="modal-overlay" id="modal-digital-card">
+    <div class="modal-container" style="max-width:500px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-id-card"></i> Carné Virtual SURA</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="digital-card-render">
+        <!-- Generado dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Radicar Autorización -->
+  <div class="modal-overlay" id="modal-radicar-auth">
+    <div class="modal-container" style="max-width:550px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-file-upload"></i> Radicar Solicitud de Autorización</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="new-auth-form">
+          <div class="form-group">
+            <label class="form-label">Servicio o Examen Solicitado</label>
+            <input type="text" class="form-control" id="new-auth-service" placeholder="Ej: Ecografía Abdominal, Terapia..." required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nombre del Médico Ordenante</label>
+            <input type="text" class="form-control" id="new-auth-doctor" placeholder="Ej: Dr. Roberto Mendoza" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Adjuntar Orden Médica (Imagen o PDF)</label>
+            <input type="file" class="form-control" accept="image/*,.pdf">
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:1rem;">
+            <i class="fas fa-paper-plane"></i> Enviar Solicitud
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Visor de Certificados -->
+  <div class="modal-overlay" id="modal-certificate-viewer">
+    <div class="modal-container" style="max-width:780px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-certificate"></i> Vista Previa del Certificado</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="certificate-viewer-content">
+        <!-- Renderizado de certificado -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="SURA_CERTIFICADOS.printCertificate()">
+          <i class="fas fa-print"></i> Imprimir / Guardar como PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Detalle de Sede y Mapa -->
+  <div class="modal-overlay" id="modal-sede-detail">
+    <div class="modal-container" style="max-width:600px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-hospital"></i> Detalles de la Sede</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="sede-detail-content">
+        <!-- Carga dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Turno Virtual -->
+  <div class="modal-overlay" id="modal-turno-virtual">
+    <div class="modal-container" style="max-width:480px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-ticket-alt"></i> Asignación de Turno Virtual</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="text-align:center; padding:1rem 0;">
+          <div style="width:80px; height:80px; background:rgba(255,199,44,0.2); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:2.5rem; color:var(--sura-navy); margin-bottom:1rem;">
+            A-042
+          </div>
+          <h3 style="color:var(--sura-navy);">¡Tu Turno Activo es A-042!</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:0.4rem;">
+            Tiempo de espera estimado: <strong>8 minutos</strong>.<br>
+            Te notificaremos en pantalla cuando sea tu turno de atención.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Widget Flotante Asistente Virtual Tibot -->
+  <div class="tibot-widget">
+    <div class="tibot-box" id="tibot-box">
+      <div class="tibot-header">
+        <div class="tibot-header-info">
+          <div class="tibot-avatar"><i class="fas fa-robot"></i></div>
+          <div>
+            <strong style="display:block; font-size:0.95rem;">Tibot SURA</strong>
+            <small style="color:var(--sura-yellow);">Asistente Virtual 24/7</small>
+          </div>
+        </div>
+        <button id="tibot-close-btn" style="background:none; color:#FFF; font-size:1.1rem;"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="tibot-chat-messages" id="tibot-chat-messages">
+        <div class="chat-msg bot">
+          ¡Hola! 👋 Soy <strong>Tibot</strong>, tu asistente virtual EPS SURA. ¿Cómo puedo ayudarte hoy?
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.3rem;">
+          <button class="tibot-chip btn-outline" data-topic="citas" style="font-size:0.75rem; padding:0.25rem 0.6rem;">📅 Citas Médicas</button>
+          <button class="tibot-chip btn-outline" data-topic="autorizaciones" style="font-size:0.75rem; padding:0.25rem 0.6rem;">📑 Autorizaciones</button>
+          <button class="tibot-chip btn-outline" data-topic="certificados" style="font-size:0.75rem; padding:0.25rem 0.6rem;">📜 Certificados</button>
+        </div>
+      </div>
+
+      <div class="tibot-input-area">
+        <input type="text" id="tibot-input" placeholder="Escribe tu consulta aquí...">
+        <button type="button" id="tibot-send-btn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+    <!-- Botón Flotante Oficial (Image 2: Canales de contacto) -->
+    <div class="floating-contact-widget" id="tibot-toggle-btn" title="Canales de Contacto SURA">
+      <div class="contact-widget-pill">
+        <span>Canales de contacto</span>
+        <div class="contact-widget-icon" style="overflow:hidden; padding:2px;">
+          <img src="imagenes/ala.png" alt="SURA" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Oficial SURA -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="brand-logo" style="margin-bottom:1rem; display:inline-flex;">
+            <div class="logo-wing-badge">
+              <img src="imagenes/ala.png" alt="EPS SURA Logo">
+            </div>
+            <div class="logo-text">
+              <span class="logo-title" style="color:#FFF;">EPS SURA</span>
+              <span class="logo-subtitle" style="color:var(--sura-yellow);">SERVICIOS EN LÍNEA</span>
+            </div>
+          </a>
+          <p style="font-size:0.85rem; color:#94A3B8; max-width:320px;">
+            Comprometidos con el cuidado, la prevención y el bienestar de millones de afiliados en toda Colombia. Todos los trámites en línea son totalmente gratuitos.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Servicios Principales</h4>
+          <ul class="footer-links">
+            <li><a href="#citas">Agendar Citas Médicas</a></li>
+            <li><a href="#autorizaciones">Consulta de Autorizaciones</a></li>
+            <li><a href="#certificados">Descarga de Certificados</a></li>
+            <li><a href="#directorio">Red de Urgencias y Clínicas</a></li>
+            <li><a href="#planes">Plan Complementario (PAC)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Líneas de Atención</h4>
+          <ul class="footer-links">
+            <li><a href="#">Medellín: (604) 448 6115</a></li>
+            <li><a href="#">Bogotá: (601) 489 7941</a></li>
+            <li><a href="#">Cali: (602) 380 8941</a></li>
+            <li><a href="#">Barranquilla: (605) 319 7941</a></li>
+            <li><a href="#">Línea Gratuita: 01 8000 519 519</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Canales Digitales</h4>
+          <p style="font-size:0.85rem; margin-bottom:1rem;">Descarga nuestra App Seguros SURA disponible en iOS y Android.</p>
+          <div style="display:flex; gap:0.5rem;">
+            <span class="badge badge-info" style="padding:0.5rem 0.8rem; cursor:pointer;"><i class="fab fa-apple"></i> App Store</span>
+            <span class="badge badge-warning" style="padding:0.5rem 0.8rem; cursor:pointer;"><i class="fab fa-google-play"></i> Google Play</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 EPS SURA - Entidad Promotora de Salud Suramericana S.A. Todos los derechos reservados.</p>
+        <p>Políticas de Privacidad | Términos y Condiciones | Protección de Datos Personales</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Lengua de Señas (LSC - Accesibilidad SURA) -->
+  <div class="modal-overlay" id="modal-lengua-senas">
+    <div class="modal-container" style="max-width: 580px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-hands-asl-interpreting" style="color:var(--sura-blue);"></i> Atención en Lengua de Señas (LSC)</h3>
+        <button class="modal-close" data-close-modal="modal-lengua-senas">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.5rem; text-align:center;">
+        <div style="background:linear-gradient(135deg, #1A232E, #2A323D); color:#FFF; padding:1.5rem; border-radius:var(--radius-md); margin-bottom:1.5rem;">
+          <i class="fas fa-headset" style="font-size:2.8rem; color:var(--sura-yellow); margin-bottom:0.8rem;"></i>
+          <h4 style="font-size:1.2rem; color:#FFF; margin-bottom:0.4rem;">Intérprete en Lengua de Señas Colombiana</h4>
+          <p style="font-size:0.88rem; color:#CBD5E1; max-width:440px; margin:0 auto;">
+            Accede a videollamada directa con nuestros intérpretes oficiales de LSC para realizar tus trámites de salud sin barreras.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+          <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:1rem; border-radius:var(--radius-md); text-align:left;">
+            <i class="fas fa-video" style="color:var(--sura-blue); font-size:1.4rem; margin-bottom:0.4rem;"></i>
+            <h5 style="font-size:0.95rem; margin-bottom:0.2rem;">Iniciar Videollamada</h5>
+            <p style="font-size:0.78rem; color:#64748B;">Atención de lunes a domingo de 7:00 AM a 7:00 PM.</p>
+            <button class="btn-primary" style="margin-top:0.8rem; width:100%; padding:0.4rem 0.8rem; font-size:0.8rem;" onclick="App.showToast('Conectando con el intérprete en Lengua de Señas LSC...', 'info')">
+              Conectar Ahora
+            </button>
+          </div>
+
+          <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:1rem; border-radius:var(--radius-md); text-align:left;">
+            <i class="fas fa-play-circle" style="color:var(--sura-green); font-size:1.4rem; margin-bottom:0.4rem;"></i>
+            <h5 style="font-size:0.95rem; margin-bottom:0.2rem;">Video Tutoriales LSC</h5>
+            <p style="font-size:0.78rem; color:#64748B;">Aprende a pedir citas y autorizaciones en LSC.</p>
+            <button class="btn-outline" style="margin-top:0.8rem; width:100%; padding:0.4rem 0.8rem; font-size:0.8rem;" onclick="App.showToast('Cargando video tutoriales en Lengua de Señas...', 'info')">
+              Ver Videos
+            </button>
+          </div>
+        </div>
+
+        <p style="font-size:0.78rem; color:#94A3B8;">
+          <i class="fas fa-shield-alt"></i> Servicio oficial de accesibilidad para la comunidad sorda de EPS SURA.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts JS -->
+  <script src="js/portal.js"></script>
+  <script src="js/citas.js"></script>
+  <script src="js/autorizaciones.js"></script>
+  <script src="js/certificados.js"></script>
+  <script src="js/directorio.js"></script>
+  <script src="js/tibot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
