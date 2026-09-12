@@ -19,7 +19,7 @@
 </head>
 <body>
 
-  <!-- Topbar Oficial EPS SURA (Image 2) -->
+  <!-- Topbar Oficial EPS SURA (Fondo Oscuro Pizarra con Botón Azul Sesión - Screenshot) -->
   <div class="topbar">
     <div class="container topbar-content">
       <div class="topbar-left-links">
@@ -27,7 +27,9 @@
           <i class="fas fa-hands-asl-interpreting"></i> LENGUA DE SEÑAS
         </button>
         <span class="topbar-divider">|</span>
-        <span class="topbar-link"><i class="fas fa-globe"></i> ESPAÑOL <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></span>
+        <a href="#idioma" class="topbar-link">
+          ESPAÑOL <i class="fas fa-caret-down" style="font-size:0.75rem;"></i>
+        </a>
       </div>
       <div class="topbar-right-links">
         <a href="#ley-transparencia" class="topbar-link">Ley de transparencia</a>
@@ -36,34 +38,49 @@
         <a href="#contacto" class="topbar-link">Canales de contacto</a>
         <a href="#solicitar-clave" class="topbar-link">Solicitar clave</a>
         
-        <button class="btn-dark-login" id="btn-open-login" data-open-modal="modal-login">
+        <button class="btn-sura-blue-login" id="btn-open-login" data-open-modal="modal-login">
           <i class="fas fa-user-circle"></i> INICIAR SESIÓN <i class="fas fa-caret-down"></i>
         </button>
 
-        <button class="accessibility-btn" id="theme-toggle-btn" title="Cambiar Modo Oscuro">
+        <button class="topbar-search-btn" title="Buscar en el portal" data-open-modal="modal-buscar">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <button class="accessibility-btn" id="theme-toggle-btn" title="Cambiar Modo Oscuro" style="margin-left:0.3rem;">
           <i class="fas fa-moon"></i>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Header Principal con Cinta Gris (Logo Blanco Grande + Categorías + Turno Virtual + Línea Multicolor) -->
+  <!-- Header Principal Blanco con Logo Combinado EPS SURA y Navegación por Categorías (Screenshot) -->
   <header class="navbar-sticky">
     <div class="category-nav-wrapper">
       <div class="container category-nav-content">
-        <!-- Logo Blanco Más Grande -->
-        <a href="#" class="brand-logo-ribbon" title="EPS SURA - Inicio">
-          <img src="imagenes/logo-sura-white.png" alt="EPS SURA" class="ribbon-logo-img">
+        <!-- Logo Oficial SURA Combinado: EPS | sura + Ala -->
+        <a href="#" class="brand-logo-sura" title="EPS SURA - Inicio">
+          <img src="imagenes/logo-sura.png" alt="EPS SURA" style="height:38px; width:auto; max-height:38px; display:block;">
         </a>
 
+        <!-- Pestañas de Categorías con Separadores Verticales "|" -->
         <ul class="category-nav-links" id="category-nav-links">
-          <li class="active"><a href="#inicio">INICIO</a></li>
-          <li><a href="#servicios">AFILIADOS</a></li>
-          <li><a href="#empleadores">EMPLEADORES</a></li>
-          <li><a href="#independientes">INDEPENDIENTES</a></li>
-          <li><a href="#asesores">ASESORES COMERCIALES</a></li>
-          <li><a href="#prestadores">PRESTADORES DE SERVICIO</a></li>
-          <li><a href="#pac">PAC</a></li>
+          <li class="active">
+            <a href="#inicio">
+              <span class="tab-icon-circle"><i class="fas fa-home"></i></span> INICIO
+            </a>
+          </li>
+          <li class="nav-separator">|</li>
+          <li><a href="#servicios"><i class="fas fa-users" style="font-size:0.8rem; color:#64748B;"></i> AFILIADOS</a></li>
+          <li class="nav-separator">|</li>
+          <li><a href="#empleadores"><i class="fas fa-briefcase" style="font-size:0.8rem; color:#64748B;"></i> EMPLEADORES</a></li>
+          <li class="nav-separator">|</li>
+          <li><a href="#independientes"><i class="fas fa-user" style="font-size:0.8rem; color:#64748B;"></i> INDEPENDIENTES</a></li>
+          <li class="nav-separator">|</li>
+          <li><a href="#asesores"><i class="fas fa-handshake" style="font-size:0.8rem; color:#64748B;"></i> ASESORES COMERCIALES</a></li>
+          <li class="nav-separator">|</li>
+          <li><a href="#prestadores"><i class="fas fa-stethoscope" style="font-size:0.8rem; color:#64748B;"></i> PRESTADORES DE SERVICIO</a></li>
+          <li class="nav-separator">|</li>
+          <li><a href="#pac"><i class="fas fa-book-open" style="font-size:0.8rem; color:#64748B;"></i> PAC</a></li>
         </ul>
 
         <div class="nav-actions-ribbon">
@@ -71,100 +88,162 @@
             <div class="hero-avatar" style="width:34px; height:34px; font-size:0.9rem;" class="btn-open-digital-card" title="Ver Carné Virtual">
               M
             </div>
-            <button class="btn-outline" id="logout-btn" style="padding:0.3rem 0.7rem; font-size:0.75rem; border-color:#FFF; color:#FFF;">
+            <button class="btn-outline" id="logout-btn" style="padding:0.3rem 0.7rem; font-size:0.75rem; border-color:#0056E0; color:#0056E0;">
               <i class="fas fa-sign-out-alt"></i> Salir
             </button>
           </div>
 
-          <button class="btn-secondary" data-open-modal="modal-turno-virtual" style="padding:0.45rem 1.1rem; font-size:0.82rem;">
-            <i class="fas fa-ticket-alt"></i> Turno Virtual
-          </button>
-          <button class="mobile-toggle" id="mobile-menu-toggle" style="color:#FFF;">
+          <button class="mobile-toggle" id="mobile-menu-toggle" style="color:#333;">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
     </div>
-
-    <!-- Barra Secundaria de Accesos Directos -->
-    <div class="subnav-bar">
-      <div class="container subnav-content">
-        <a href="#servicios" class="subnav-item"><i class="fas fa-th-large"></i> Servicios a un Clic</a>
-        <a href="#citas" class="subnav-item"><i class="fas fa-calendar-check"></i> Citas Médicas</a>
-        <a href="#autorizaciones" class="subnav-item"><i class="fas fa-file-signature"></i> Autorizaciones</a>
-        <a href="#certificados" class="subnav-item"><i class="fas fa-file-pdf"></i> Certificados</a>
-        <a href="#directorio" class="subnav-item"><i class="fas fa-hospital"></i> Red de Atención</a>
-        <a href="#planes" class="subnav-item"><i class="fas fa-shield-alt"></i> Planes SURA</a>
-      </div>
-    </div>
   </header>
 
-  <!-- Hero Section Principal -->
-  <section class="hero-section">
+  <!-- Hero Section Principal - Banner Informativo Oficial Sismo SURA (Screenshot) -->
+  <section class="hero-section" id="inicio">
     <div class="hero-bg-shapes">
-      <div class="hero-shape hero-shape-1"></div>
-      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-shape-wave hero-shape-wave-1"></div>
+      <div class="hero-shape-wave hero-shape-wave-2"></div>
     </div>
 
     <div class="container hero-content">
+      <!-- Columna Izquierda: Información de Sedes Habilitadas por Sismo -->
       <div>
-        <span class="hero-badge">
+        <div class="hero-badge-pill">
           <i class="fas fa-shield-alt"></i> Tu salud en manos expertas sin salir de casa
-        </span>
-        <h1 class="hero-title">
-          Gestiona tus trámites de salud en <span>EPS SURA</span>
+        </div>
+        
+        <h1 class="hero-title-sismo">
+          Consulta las sedes habilitadas<br>
+          en las zonas afectadas <span class="highlight-blue">por el sismo</span>
         </h1>
-        <p class="hero-subtitle">
-          Agenda citas médicas, consulta el estado de tus autorizaciones, descarga tu carné digital y encuentra atención de urgencias fácil y rápido.
+        
+        <p class="hero-desc-sismo">
+          Si te encuentras en Cali, Armenia, Manizales o Pereira, consulta las farmacias, IPS Básicas y oficinas de atención al usuario de EPS SURA que prestan servicios a partir del 18 de agosto.
         </p>
 
-        <!-- Buscador Rápido -->
-        <div class="hero-search-box">
-          <i class="fas fa-search" style="color:var(--sura-blue); margin-left:1rem; font-size:1.1rem;"></i>
-          <input type="text" id="hero-quick-input" placeholder="¿Qué trámite deseas realizar hoy? Ej: Cita, Autorización...">
-          <button type="button" onclick="window.location.hash = '#servicios'">
-            Buscar <i class="fas fa-arrow-right"></i>
-          </button>
+        <!-- Botón Principal Ingresa Aquí -->
+        <div>
+          <a href="#servicios" class="btn-sura-cta">
+            INGRESA AQUÍ <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Indicador Puntos Carrusel -->
+        <div class="hero-carousel-dots">
+          <span class="dot active" title="Diapositiva 1"></span>
+          <span class="dot" title="Diapositiva 2"></span>
+          <span class="dot" title="Diapositiva 3"></span>
+          <span class="dot" title="Diapositiva 4"></span>
         </div>
       </div>
 
-      <!-- Preview Tarjeta Afiliado -->
-      <div class="hero-visual">
-        <div class="hero-card-preview">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:0.8rem;">
-            <div class="hero-user-badge" style="margin-bottom:0;">
-              <div class="hero-avatar">M</div>
-              <div class="hero-user-info">
-                <h4 id="hero-user-name">MARÍA ALEJANDRA GÓMEZ PÉREZ</h4>
-                <p id="hero-user-doc">CC 1.020.456.789</p>
-              </div>
-            </div>
-            <!-- Imagen oficial ala.png -->
-            <img src="imagenes/ala.png" alt="SURA Wing Logo" style="height:46px; width:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+      <!-- Columna Derecha: Ilustración 3D del Corazón con Estetoscopio y Botones Flotantes -->
+      <div class="hero-visual-3d">
+        <div class="sura-3d-pedestal-card">
+          <!-- Ilustración SVG Vectorial 3D del Corazón Glossy con Estetoscopio y Anillo de Luz -->
+          <svg viewBox="0 0 400 320" width="360" height="280" style="max-width:100%; max-height:100%; display:block; overflow:hidden;">
+            <defs>
+              <!-- Gradientes para el Corazón 3D -->
+              <radialGradient id="heartGradient" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#4B90FF" />
+                <stop offset="45%" stop-color="#0056E0" />
+                <stop offset="85%" stop-color="#0037A3" />
+                <stop offset="100%" stop-color="#00216B" />
+              </radialGradient>
+
+              <!-- Gradiente para el Reflejo 3D -->
+              <linearGradient id="heartHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85" />
+                <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.2" />
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+              </linearGradient>
+
+              <!-- Gradiente para el Estetoscopio -->
+              <linearGradient id="stethoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#3B82F6" />
+                <stop offset="100%" stop-color="#1D4ED8" />
+              </linearGradient>
+
+              <!-- Gradiente Plata para Pieza de Pecho -->
+              <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E2E8F0" />
+                <stop offset="50%" stop-color="#94A3B8" />
+                <stop offset="100%" stop-color="#475569" />
+              </linearGradient>
+
+              <!-- Sombra 3D Base -->
+              <filter id="shadow3D" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#002868" flood-opacity="0.25" />
+              </filter>
+            </defs>
+
+            <!-- Anillo Flotante de Fondo -->
+            <ellipse cx="200" cy="170" rx="140" ry="85" fill="none" stroke="url(#heartGradient)" stroke-width="2.5" opacity="0.3" stroke-dasharray="8 6" />
+
+            <!-- Pedestal Base 3D Suave -->
+            <ellipse cx="200" cy="245" rx="110" ry="24" fill="#00388A" opacity="0.12" filter="blur(8px)" />
+
+            <!-- Grupo Principal del Corazón 3D -->
+            <g filter="url(#shadow3D)">
+              <!-- Escultura del Corazón 3D -->
+              <path d="M 200,230 
+                       C 140,185 100,145 100,105 
+                       C 100,65 130,45 165,45 
+                       C 185,45 195,55 200,68 
+                       C 205,55 215,45 235,45 
+                       C 270,45 300,65 300,105 
+                       C 300,145 260,185 200,230 Z" 
+                    fill="url(#heartGradient)" />
+
+              <!-- Brillo y Reflejo 3D en la Parte Superior del Corazón -->
+              <path d="M 165,52 
+                       C 138,52 112,68 112,100 
+                       C 112,125 135,155 170,185
+                       C 150,155 130,125 130,95
+                       C 130,70 148,58 165,52 Z" 
+                    fill="url(#heartHighlight)" />
+
+              <ellipse cx="148" cy="72" rx="18" ry="10" fill="#FFFFFF" opacity="0.45" transform="rotate(-30 148 72)" />
+              <ellipse cx="252" cy="72" rx="12" ry="7" fill="#FFFFFF" opacity="0.35" transform="rotate(30 252 72)" />
+
+              <!-- Ondas de Pulso Electrocardiograma 3D en Blanco -->
+              <path d="M 130,125 L 160,125 L 170,95 L 182,150 L 196,110 L 206,132 L 216,125 L 270,125" 
+                    fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+              <!-- Estetoscopio 3D Envolvente -->
+              <!-- Tubo Flexible del Estetoscopio -->
+              <path d="M 115,160 
+                       C 90,200 120,250 200,250 
+                       C 285,250 310,195 285,150 
+                       C 275,130 260,120 255,130" 
+                    fill="none" stroke="url(#stethoGradient)" stroke-width="12" stroke-linecap="round" />
+
+              <!-- Pieza de Pecho metálica del Estetoscopio -->
+              <circle cx="115" cy="160" r="16" fill="url(#silverGradient)" stroke="#FFFFFF" stroke-width="2" />
+              <circle cx="115" cy="160" r="10" fill="#0056E0" />
+            </g>
+
+            <!-- Destellos y Pequeñas Partículas 3D -->
+            <path d="M 295,75 L 305,75 M 300,70 L 300,80" stroke="#0056E0" stroke-width="3" stroke-linecap="round" />
+            <path d="M 105,70 L 113,70 M 109,66 L 109,74" stroke="#0056E0" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="312" cy="100" r="3" fill="#60A5FA" />
+            <circle cx="92" cy="135" r="4" fill="#3B82F6" />
+          </svg>
+
+          <!-- Botón de Accesibilidad Flotante Lateral Derecho (Icono Persona/Silla) -->
+          <div class="floating-accessibility-side" title="Accesibilidad en Línea" data-open-modal="modal-lengua-senas">
+            <i class="fas fa-universal-access"></i>
           </div>
 
-          <div class="hero-quick-stats">
-            <div class="stat-box">
-              <i class="fas fa-calendar-check"></i>
-              <span>Cita Próxima</span>
-              <strong id="hero-stat-cita">25 Ago - 9:30 AM</strong>
-            </div>
-            <div class="stat-box">
-              <i class="fas fa-file-medical-alt"></i>
-              <span>Autorización</span>
-              <strong id="hero-stat-auth" style="color:var(--sura-yellow);">1 Aprobada</strong>
-            </div>
-            <div class="stat-box">
-              <i class="fas fa-hospital-user"></i>
-              <span>IPS Asignada</span>
-              <strong>SURA San Diego</strong>
-            </div>
-            <div class="stat-box">
-              <i class="fas fa-certificate"></i>
-              <span>Estado Afiliación</span>
-              <strong style="color:#00A859;">Activo (Cotizante)</strong>
-            </div>
-          </div>
+          <!-- Insignia Flotante Inferior Derecha: Canales de contacto -->
+          <a href="#contacto" class="floating-contact-badge-bottom">
+            <i class="fas fa-comment-dots" style="font-size:1.1rem;"></i>
+            <span>Canales de contacto</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -611,12 +690,12 @@
       </div>
     </div>
 
-    <!-- Botón Flotante Oficial (Image 2: Canales de contacto) -->
+    <!-- Botón Flotante Oficial (Canales de contacto) -->
     <div class="floating-contact-widget" id="tibot-toggle-btn" title="Canales de Contacto SURA">
       <div class="contact-widget-pill">
         <span>Canales de contacto</span>
-        <div class="contact-widget-icon" style="overflow:hidden; padding:2px;">
-          <img src="imagenes/ala.png" alt="SURA" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+        <div class="contact-widget-icon" style="width:32px; height:32px; max-width:32px; max-height:32px; overflow:hidden; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+          <img src="imagenes/ala.png" alt="SURA" style="width:100% !important; height:100% !important; max-width:32px !important; max-height:32px !important; object-fit:cover !important;">
         </div>
       </div>
     </div>

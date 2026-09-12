@@ -72,6 +72,28 @@ body.dark-theme {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-wing-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sura-navy, #1B5299);
+}
+
+.logo-wing-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -122,13 +144,13 @@ input, select, textarea {
   padding: 0 1.5rem;
 }
 
-/* Topbar Oficial SURA (Charcoal Theme) */
+/* Topbar Oficial SURA (Charcoal Dark Slate Theme) */
 .topbar {
   background-color: var(--sura-topbar-bg);
   color: #FFFFFF;
   font-size: 0.82rem;
   padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .topbar-content {
@@ -139,9 +161,9 @@ input, select, textarea {
   gap: 0.8rem;
 }
 
-.topbar-contact, .topbar-left-links, .topbar-right-links {
+.topbar-left-links, .topbar-right-links {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.1rem;
   align-items: center;
 }
 
@@ -157,7 +179,8 @@ input, select, textarea {
 }
 
 .topbar-link:hover {
-  color: var(--sura-yellow);
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 
 .topbar-divider {
@@ -165,30 +188,51 @@ input, select, textarea {
   font-size: 0.8rem;
 }
 
-.btn-dark-login {
-  background: var(--sura-dark-btn);
+.btn-sura-blue-login {
+  background: var(--sura-electric-blue, #0056E0);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.45rem 1.1rem;
+  border: none;
+  padding: 0.5rem 1.25rem;
   border-radius: var(--radius-full);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px rgba(0, 86, 224, 0.35);
+  letter-spacing: 0.3px;
 }
 
-.btn-dark-login:hover {
-  background: #5A626C;
-  border-color: var(--sura-yellow);
-  color: var(--sura-yellow);
+.btn-sura-blue-login:hover {
+  background: #0045B5;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(0, 86, 224, 0.5);
+}
+
+.topbar-search-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.topbar-search-btn:hover {
+  background: var(--sura-electric-blue, #0056E0);
+  border-color: transparent;
 }
 
 .accessibility-btn, .theme-toggle-btn {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
   padding: 0.35rem 0.65rem;
   border-radius: var(--radius-sm);
@@ -203,38 +247,36 @@ input, select, textarea {
   background: var(--sura-blue);
 }
 
-/* Navbar Sticky con Cinta Gris SURA */
+/* Navbar Sticky con Header Blanco EPS SURA (Screenshot) */
 .navbar-sticky {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: var(--shadow-md);
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
   transition: var(--transition);
 }
 
-/* Categorías de Navegación SURA (Cinta Gris Slate con Línea de Colores - Screenshot) */
+/* Header Blanco y Navegación por Categorías */
 .category-nav-wrapper {
-  background-color: var(--sura-nav-bg);
+  background-color: #FFFFFF;
   position: relative;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid #E9ECEF;
 }
 
-.category-nav-wrapper::after {
-  content: '';
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: linear-gradient(90deg, #FF8C00 0%, #FFC72C 25%, #00A859 50%, #00A3E0 75%, #9C27B0 100%);
+body.dark-theme .category-nav-wrapper {
+  background-color: #181E26;
+  border-bottom-color: #2A323D;
 }
 
 .category-nav-content {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0.4rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 64px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -247,22 +289,59 @@ input, select, textarea {
   height: 0 !important;
 }
 
-.brand-logo-ribbon {
+/* Logotipo EPS SURA Oficial Combinado (Fondo Blanco) */
+.brand-logo-sura {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  gap: 0.6rem;
   text-decoration: none;
+  flex-shrink: 0;
   transition: transform 0.2s ease;
 }
 
-.brand-logo-ribbon:hover {
-  transform: scale(1.03);
+.brand-logo-sura:hover {
+  transform: scale(1.02);
 }
 
-.ribbon-logo-img {
-  height: 48px;
-  width: auto;
-  display: block;
+.brand-logo-sura .logo-eps {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: #333942;
+  letter-spacing: -0.5px;
+}
+
+.brand-logo-sura .logo-pipe {
+  color: #CBD5E1;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.brand-logo-sura .logo-sura-group {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.brand-logo-sura .logo-sura-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #0056E0;
+  letter-spacing: -1px;
+}
+
+.brand-logo-sura img.logo-wing-img,
+img.logo-wing-img {
+  width: 40px !important;
+  height: 30px !important;
+  max-width: 40px !important;
+  max-height: 30px !important;
+  flex-shrink: 0 !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
 }
 
 .nav-actions-ribbon {
@@ -275,29 +354,46 @@ input, select, textarea {
 .category-nav-links {
   display: flex;
   list-style: none;
-  gap: 1.8rem;
+  gap: 0.6rem;
   align-items: center;
   margin: 0 auto;
 }
 
-.category-nav-links a {
-  font-weight: 800;
-  color: #FFFFFF;
+.category-nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.category-nav-links .nav-separator {
+  color: #CBD5E1;
   font-size: 0.85rem;
-  letter-spacing: 0.6px;
+  font-weight: 300;
+  user-select: none;
+  padding: 0 0.3rem;
+}
+
+.category-nav-links a {
+  font-weight: 700;
+  color: #475569;
+  font-size: 0.8rem;
+  letter-spacing: 0.4px;
   position: relative;
-  padding: 0.8rem 0;
+  padding: 0.8rem 0.5rem;
   transition: var(--transition);
   text-transform: uppercase;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.category-nav-links li.active a, .category-nav-links a:hover {
-  color: var(--sura-yellow);
+body.dark-theme .category-nav-links a {
+  color: #CBD5E1;
 }
 
-body.dark-theme .category-nav-links li.active a, body.dark-theme .category-nav-links a:hover {
-  color: var(--sura-yellow);
+.category-nav-links li.active a {
+  color: #0056E0;
+  font-weight: 800;
 }
 
 .category-nav-links li.active a::after {
@@ -307,8 +403,21 @@ body.dark-theme .category-nav-links li.active a, body.dark-theme .category-nav-l
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--sura-orange);
+  background: #0056E0;
   border-radius: 2px;
+}
+
+.tab-icon-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #0056E0;
+  color: #0056E0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  background: rgba(0, 86, 224, 0.06);
 }
 
 /* Subnav Bar para Accesos Rápida a Trámites */
@@ -468,57 +577,22 @@ body.dark-theme .section-divider-heading::after {
   border-bottom-color: #3A4350;
 }
 
-/* Hero Section (Fondo Gradiante estilo EPS SURA - Screenshot) */
+/* Hero Section (Fondo Gradiente Claro estilo EPS SURA - Screenshot) */
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, #3C3E42 0%, #2F3136 50%, #2A2438 100%);
-  color: #FFFFFF;
-  padding: 3.5rem 0 5.5rem 0;
+  background: linear-gradient(135deg, #E6EDF5 0%, #D8E3EF 45%, #E9EFF6 100%);
+  color: #1E293B;
+  padding: 3.5rem 0 4.5rem 0;
   overflow: hidden;
+  min-height: 480px;
 }
 
-/* Floating Contact Widget (Image 2 - Bottom Right "Canales de contacto") */
-.floating-contact-widget {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1200;
-  cursor: pointer;
+body.dark-theme .hero-section {
+  background: linear-gradient(135deg, #151C24 0%, #1A232E 50%, #121820 100%);
+  color: #F1F5F9;
 }
 
-.contact-widget-pill {
-  background: var(--sura-blue);
-  color: #FFFFFF;
-  padding: 0.6rem 1.2rem 0.6rem 1.4rem;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 8px 24px rgba(27, 82, 153, 0.4);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-}
-
-.contact-widget-pill:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(27, 82, 153, 0.6);
-  background: var(--sura-blue-hover);
-}
-
-.contact-widget-icon {
-  background: var(--sura-yellow);
-  color: var(--sura-navy);
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
+/* Background Abstract Waves */
 .hero-bg-shapes {
   position: absolute;
   top: 0;
@@ -530,132 +604,233 @@ body.dark-theme .section-divider-heading::after {
   pointer-events: none;
 }
 
-.hero-shape {
+.hero-shape-wave {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.35;
+  filter: blur(40px);
+  opacity: 0.5;
 }
 
-.hero-shape-1 {
-  top: -10%;
-  right: -5%;
-  width: 500px;
-  height: 500px;
-  background: var(--sura-blue);
+.hero-shape-wave-1 {
+  top: -20%;
+  right: -10%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(0, 86, 224, 0.15) 0%, rgba(255,255,255,0) 70%);
 }
 
-.hero-shape-2 {
-  bottom: -20%;
-  left: 10%;
-  width: 400px;
-  height: 400px;
-  background: var(--sura-yellow);
-  opacity: 0.2;
+.hero-shape-wave-2 {
+  bottom: -30%;
+  left: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(0, 163, 224, 0.12) 0%, rgba(255,255,255,0) 70%);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
   align-items: center;
 }
 
-.hero-badge {
+/* Badge Superior con Escudo */
+.hero-badge-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 0.4rem 1rem;
+  gap: 0.6rem;
+  background: #D9E7F8;
+  border: 1px solid #B8D4F5;
+  padding: 0.45rem 1.1rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--sura-yellow);
-  margin-bottom: 1.25rem;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
-  color: #FFFFFF;
-}
-
-.hero-title span {
-  color: var(--sura-yellow);
-  position: relative;
-}
-
-.hero-subtitle {
-  font-size: 1.15rem;
-  color: #E2E8F0;
-  margin-bottom: 2rem;
-  max-width: 540px;
-}
-
-/* Buscador Quick Hero */
-.hero-search-box {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  padding: 0.5rem;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-  max-width: 540px;
-}
-
-body.dark-theme .hero-search-box {
-  background: rgba(28, 37, 65, 0.95);
-}
-
-.hero-search-box input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  padding: 0.8rem 1.2rem;
-  color: var(--text-primary);
-  font-size: 1rem;
-  outline: none;
-}
-
-.hero-search-box button {
-  background: var(--sura-blue);
-  color: #FFFFFF;
-  padding: 0.8rem 1.5rem;
-  border-radius: var(--radius-full);
+  font-size: 0.88rem;
   font-weight: 700;
-  display: flex;
+  color: #0056E0;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 86, 224, 0.1);
+}
+
+body.dark-theme .hero-badge-pill {
+  background: rgba(0, 86, 224, 0.2);
+  border-color: rgba(0, 86, 224, 0.4);
+  color: #60A5FA;
+}
+
+.hero-title-sismo {
+  font-size: 2.7rem;
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 1.25rem;
+  color: #1E2B37;
+  letter-spacing: -0.5px;
+}
+
+body.dark-theme .hero-title-sismo {
+  color: #F8FAFC;
+}
+
+.hero-title-sismo .highlight-blue {
+  color: #0056E0;
+  font-weight: 900;
+}
+
+.hero-desc-sismo {
+  font-size: 1.05rem;
+  color: #475569;
+  margin-bottom: 2.2rem;
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+body.dark-theme .hero-desc-sismo {
+  color: #94A3B8;
+}
+
+/* Botón CTA Ingresa Aquí */
+.btn-sura-cta {
+  background: #0056E0;
+  color: #FFFFFF !important;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 86, 224, 0.35);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
 }
 
-.hero-search-box button:hover {
-  background: var(--sura-navy);
+.btn-sura-cta:hover {
+  background: #0045B5;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 86, 224, 0.45);
 }
 
-/* Card Visual Hero */
-.hero-visual {
+/* Puntos Carrusel */
+.hero-carousel-dots {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 2.5rem;
+  align-items: center;
+}
+
+.hero-carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #CBD5E1;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.hero-carousel-dots .dot.active {
+  width: 24px;
+  border-radius: 9999px;
+  background: #0056E0;
+}
+
+/* Contenedor Visual Arte 3D */
+.hero-visual-3d {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.hero-card-preview {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
+/* Tarjeta / Escultura 3D del Corazón con Estetoscopio */
+.sura-3d-pedestal-card {
+  position: relative;
   width: 100%;
   max-width: 440px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  animation: floatCard 6s ease-in-out infinite;
+  height: 340px;
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.9) 0%, rgba(230,238,247,0.7) 100%);
+  border-radius: 36px;
+  box-shadow: 0 20px 50px rgba(0, 43, 73, 0.12), inset 0 2px 6px rgba(255,255,255,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  animation: floatArt 6s ease-in-out infinite;
+}
+
+.sura-3d-pedestal-card svg {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+}
+
+body.dark-theme .sura-3d-pedestal-card {
+  background: radial-gradient(circle at 50% 40%, rgba(30,41,59,0.9) 0%, rgba(15,23,42,0.8) 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes floatArt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+/* Botón Flotante Lateral de Accesibilidad (Derecha) */
+.floating-accessibility-side {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #0056E0;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0, 86, 224, 0.4);
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+  border: 2px solid #FFFFFF;
+}
+
+.floating-accessibility-side:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: #0045B5;
+}
+
+/* Insignia Flotante Inferior Derecha "Canales de Contacto" */
+.floating-contact-badge-bottom {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  background: #0056E0;
+  color: #FFFFFF !important;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 86, 224, 0.38);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid rgba(255,255,255,0.4);
+  z-index: 10;
+  text-decoration: none;
+}
+
+.floating-contact-badge-bottom:hover {
+  background: #0045B5;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 86, 224, 0.5);
 }
 
 @keyframes floatCard {
@@ -840,6 +1015,60 @@ body.dark-theme .hero-search-box {
   .mobile-toggle {
     display: block;
   }
+}
+
+/* Floating Contact Widget Tibot */
+.floating-contact-widget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1200;
+  cursor: pointer;
+}
+
+.contact-widget-pill {
+  background: var(--sura-electric-blue, #0056E0);
+  color: #FFFFFF;
+  padding: 0.6rem 1.2rem 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 86, 224, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.contact-widget-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 86, 224, 0.6);
+  background: #0045B5;
+}
+
+.contact-widget-icon {
+  background: #FFFFFF;
+  color: #0056E0;
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.contact-widget-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
 }
 
 @media (max-width: 576px) {
