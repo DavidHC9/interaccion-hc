@@ -1,0 +1,1458 @@
+/* ==========================================================================
+   EPS SURA - Sistema de Diseño y Estilos Globales (Nivel de Producción)
+   ========================================================================== */
+
+/* Tipografía Oficial: Outfit (Encabezados) + Plus Jakarta Sans (Cuerpo) */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Paleta Corporativa Oficial EPS SURA */
+  --sura-topbar-bg: #363C42;          /* Carbón Pizarra Topbar */
+  --sura-header-bg: #FFFFFF;          /* Blanco Puro Encabezado */
+  --sura-nav-bg: #525961;             /* Gris Pizarra Medio Categorías */
+  --sura-dark-btn: #454C54;           /* Píldora Gris Carbón */
+  --sura-navy: #1A232E;               /* Pizarra Negra Profunda */
+  --sura-navy-dark: #121820;          /* Azul Marino Oscuro Superficie */
+  --sura-navy-light: #253342;         /* Azul Pizarra Intermedio */
+  --sura-blue: #1B5299;               /* Azul Real Corporativo SURA */
+  --sura-blue-hover: #143F77;         /* Azul Real Hover */
+  --sura-electric-blue: #0056E0;      /* Azul Eléctrico SURA (Acciones Clave) */
+  --sura-electric-hover: #0045B5;     /* Azul Eléctrico Hover */
+  --sura-accent-cyan: #00A3E0;        /* Cian Luminoso Acento */
+  --sura-accent-cyan-light: rgba(0, 163, 224, 0.12);
+  --sura-yellow: #FFC72C;             /* Amarillo Oficial Marca SURA */
+  --sura-yellow-hover: #E5B220;       /* Amarillo Hover */
+  --sura-yellow-tint: rgba(255, 199, 44, 0.16);
+  --sura-orange: #FF8C00;             /* Naranja Institucional */
+  --sura-green: #00A859;              /* Verde Éxito / Confirmación */
+  --sura-green-tint: rgba(0, 168, 89, 0.12);
+  --sura-red: #E03C31;                /* Rojo Alerta / Urgencias */
+  --sura-red-tint: rgba(224, 60, 49, 0.12);
+
+  /* Paleta Neutra - Tema Claro */
+  --bg-main: #F4F6F9;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --bg-card-elevated: #FFFFFF;
+  --bg-header: #FFFFFF;
+  --text-primary: #1E293B;            /* Alto contraste WCAG AAA */
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
+  --border-subtle: #EDF2F7;
+  --border-focus: #0056E0;
+
+  /* Sombras y Profundidad Multicapa (Soft Elevation) */
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 20px -3px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 16px 36px -4px rgba(15, 23, 42, 0.10), 0 8px 16px -4px rgba(15, 23, 42, 0.05);
+  --shadow-xl: 0 24px 48px -12px rgba(0, 86, 224, 0.18);
+  --shadow-glow: 0 0 24px rgba(0, 86, 224, 0.28);
+  --shadow-glow-cyan: 0 0 20px rgba(0, 163, 224, 0.35);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-blur: blur(14px);
+
+  /* Tipografía Oficial */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Sistema de Espaciado (Grid 8px) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem;    /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem;  /* 24px */
+  --space-8: 2rem;    /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem;   /* 48px */
+  --space-16: 4rem;   /* 64px */
+
+  /* Radio de Bordes */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transiciones Fluídas */
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --max-width: 1280px;
+}
+
+/* Modo Oscuro / Dark Mode */
+body.dark-theme {
+  --bg-main: #0E1217;
+  --bg-surface: #181E26;
+  --bg-card: #181E26;
+  --bg-card-hover: #222934;
+  --bg-card-elevated: #1F2732;
+  --bg-header: #181E26;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border-color: #2A323D;
+  --border-subtle: #202732;
+  --border-focus: #00A3E0;
+
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 25px rgba(0, 163, 224, 0.3);
+
+  --glass-bg: rgba(24, 30, 38, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   Reset y Fundamentos
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.65;
+}
+
+a {
+  color: var(--sura-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+a:hover {
+  color: var(--sura-electric-blue);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  background: none;
+  transition: var(--transition);
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--sura-electric-blue);
+  outline-offset: 2px;
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Insignia Alitas Oficial SURA */
+.logo-wing-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sura-navy);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo-wing-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   Topbar Oficial SURA (Charcoal Pizarra)
+   ========================================================================== */
+.topbar {
+  background-color: var(--sura-topbar-bg);
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1010;
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.topbar-left-links, .topbar-right-links {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.topbar-link {
+  color: #E2E8F0;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-xs);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.topbar-link:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+.topbar-divider {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.btn-sura-blue-login {
+  background: var(--sura-electric-blue);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.48rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 86, 224, 0.35);
+  letter-spacing: 0.4px;
+  transition: all var(--transition);
+}
+
+.btn-sura-blue-login:hover {
+  background: var(--sura-electric-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 86, 224, 0.5);
+}
+
+.btn-sura-blue-login:active {
+  transform: translateY(0);
+}
+
+.topbar-search-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.topbar-search-btn:hover {
+  background: var(--sura-electric-blue);
+  border-color: transparent;
+  transform: scale(1.05);
+}
+
+.accessibility-btn, .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.accessibility-btn:hover, .theme-toggle-btn:hover {
+  background: var(--sura-blue);
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   Header Sticky Blanco con Navegación de Categorías SURA
+   ========================================================================== */
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--sura-header-bg);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+body.dark-theme .navbar-sticky {
+  background-color: var(--bg-header);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.category-nav-wrapper {
+  background-color: inherit;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.category-nav-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+  gap: var(--space-6);
+}
+
+/* Logotipo Oficial EPS SURA */
+.brand-logo-sura {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.brand-logo-sura:hover {
+  transform: scale(1.02);
+}
+
+.brand-logo-sura img {
+  height: 38px;
+  width: auto;
+  max-height: 38px;
+  display: block;
+}
+
+/* Menú de Categorías con Separadores Verticales */
+.category-nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--space-1);
+  align-items: center;
+  margin: 0 auto;
+}
+
+.category-nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.category-nav-links .nav-separator {
+  color: var(--border-color);
+  font-size: 0.9rem;
+  font-weight: 300;
+  user-select: none;
+  padding: 0 0.2rem;
+}
+
+body.dark-theme .category-nav-links .nav-separator {
+  color: #334155;
+}
+
+.category-nav-links a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  letter-spacing: 0.4px;
+  position: relative;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.category-nav-links a:hover {
+  color: var(--sura-electric-blue);
+  background: rgba(0, 86, 224, 0.05);
+}
+
+body.dark-theme .category-nav-links a {
+  color: var(--text-secondary);
+}
+
+body.dark-theme .category-nav-links a:hover {
+  color: #60A5FA;
+  background: rgba(0, 163, 224, 0.1);
+}
+
+.category-nav-links li.active a {
+  color: var(--sura-electric-blue);
+  font-weight: 800;
+}
+
+body.dark-theme .category-nav-links li.active a {
+  color: #60A5FA;
+}
+
+.category-nav-links li.active a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0.7rem;
+  right: 0.7rem;
+  height: 3px;
+  background: var(--sura-electric-blue);
+  border-radius: var(--radius-full);
+}
+
+body.dark-theme .category-nav-links li.active a::after {
+  background: #60A5FA;
+}
+
+.tab-icon-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sura-electric-blue);
+  color: var(--sura-electric-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  background: rgba(0, 86, 224, 0.08);
+}
+
+.nav-actions-ribbon {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* Botón Hamburguesa Móvil */
+.mobile-toggle {
+  display: none;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.04);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+body.dark-theme .mobile-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.mobile-toggle:hover {
+  background: rgba(0, 86, 224, 0.1);
+  color: var(--sura-electric-blue);
+}
+
+/* ==========================================================================
+   Drawer de Navegación Móvil
+   ========================================================================== */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition);
+}
+
+.mobile-nav-drawer.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  max-width: 85vw;
+  height: 100%;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  transform: translateX(100%);
+  transition: transform var(--transition-smooth);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.active .mobile-nav-panel {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--space-4);
+}
+
+.mobile-drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mobile-drawer-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.75rem var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.mobile-drawer-links a:hover,
+.mobile-drawer-links a.active {
+  background: rgba(0, 86, 224, 0.08);
+  color: var(--sura-electric-blue);
+}
+
+/* ==========================================================================
+   Dashboard del Afiliado Autenticado (Personalización UX)
+   ========================================================================== */
+.affiliate-dashboard-section {
+  display: none;
+  background: linear-gradient(135deg, #1A232E 0%, #121820 100%);
+  color: #FFFFFF;
+  padding: var(--space-6) 0;
+  border-bottom: 3px solid var(--sura-yellow);
+  position: relative;
+  box-shadow: var(--shadow-md);
+}
+
+.affiliate-dashboard-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.affiliate-user-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.affiliate-user-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sura-yellow), #FF9800);
+  color: var(--sura-navy-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(255, 199, 44, 0.35);
+  flex-shrink: 0;
+}
+
+.affiliate-user-details h3 {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.affiliate-user-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #CBD5E1;
+}
+
+.affiliate-user-meta span.active-pill {
+  background: rgba(0, 168, 89, 0.2);
+  color: #4ADE80;
+  border: 1px solid rgba(0, 168, 89, 0.4);
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.affiliate-quick-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Hero Section Principal (Banner Informativo Oficial Sismo SURA)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #E6EDF5 0%, #D8E3EF 45%, #E9EFF6 100%);
+  color: #1E293B;
+  padding: 4rem 0 5rem 0;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+body.dark-theme .hero-section {
+  background: linear-gradient(135deg, #121820 0%, #1A232E 50%, #10161E 100%);
+  color: #F1F5F9;
+}
+
+.hero-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-shape-wave {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.6;
+}
+
+.hero-shape-wave-1 {
+  top: -20%;
+  right: -8%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(0, 86, 224, 0.16) 0%, rgba(255,255,255,0) 70%);
+}
+
+.hero-shape-wave-2 {
+  bottom: -30%;
+  left: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(0, 163, 224, 0.14) 0%, rgba(255,255,255,0) 70%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* Badge Superior con Escudo */
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #D9E7F8;
+  border: 1px solid #B8D4F5;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--sura-electric-blue);
+  margin-bottom: var(--space-5);
+  box-shadow: 0 2px 8px rgba(0, 86, 224, 0.1);
+  transition: transform var(--transition-fast);
+}
+
+.hero-badge-pill:hover {
+  transform: translateY(-1px);
+}
+
+body.dark-theme .hero-badge-pill {
+  background: rgba(0, 86, 224, 0.2);
+  border-color: rgba(0, 86, 224, 0.4);
+  color: #60A5FA;
+}
+
+.hero-title-sismo {
+  font-size: clamp(2.1rem, 3.8vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.16;
+  margin-bottom: var(--space-4);
+  color: #1E2B37;
+  letter-spacing: -0.03em;
+}
+
+body.dark-theme .hero-title-sismo {
+  color: #F8FAFC;
+}
+
+.hero-title-sismo .highlight-blue {
+  color: var(--sura-electric-blue);
+  font-weight: 900;
+}
+
+body.dark-theme .hero-title-sismo .highlight-blue {
+  color: #60A5FA;
+}
+
+.hero-desc-sismo {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+body.dark-theme .hero-desc-sismo {
+  color: #94A3B8;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Botón CTA Primario */
+.btn-sura-cta {
+  background: var(--sura-electric-blue);
+  color: #FFFFFF !important;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 86, 224, 0.35);
+  transition: all var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-sura-cta:hover {
+  background: var(--sura-electric-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 86, 224, 0.45);
+}
+
+.btn-sura-cta:active {
+  transform: translateY(0);
+}
+
+.btn-sura-cta-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--sura-navy) !important;
+  border: 1.5px solid var(--border-color);
+  padding: 0.82rem 1.8rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+body.dark-theme .btn-sura-cta-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-sura-cta-secondary:hover {
+  background: #FFFFFF;
+  border-color: var(--sura-electric-blue);
+  color: var(--sura-electric-blue) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Indicador Puntos Carrusel */
+.hero-carousel-dots {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: var(--space-8);
+  align-items: center;
+}
+
+.hero-carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: #CBD5E1;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.hero-carousel-dots .dot:hover {
+  background: #94A3B8;
+}
+
+.hero-carousel-dots .dot.active {
+  width: 28px;
+  background: var(--sura-electric-blue);
+}
+
+/* Escultura Visual 3D del Corazón */
+.hero-visual-3d {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sura-3d-pedestal-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 350px;
+  background: radial-gradient(circle at 50% 35%, rgba(255,255,255,0.92) 0%, rgba(230,238,247,0.75) 100%);
+  border-radius: 36px;
+  box-shadow: 0 24px 55px rgba(0, 43, 73, 0.12), inset 0 2px 6px rgba(255,255,255,0.85);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  animation: floatArt 6s ease-in-out infinite;
+}
+
+body.dark-theme .sura-3d-pedestal-card {
+  background: radial-gradient(circle at 50% 35%, rgba(30,41,59,0.92) 0%, rgba(15,23,42,0.82) 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes floatArt {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.floating-accessibility-side {
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--sura-electric-blue);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0, 86, 224, 0.4);
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition);
+  border: 2px solid #FFFFFF;
+}
+
+.floating-accessibility-side:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: var(--sura-electric-hover);
+}
+
+.floating-contact-badge-bottom {
+  position: absolute;
+  bottom: -20px;
+  right: 15px;
+  background: var(--sura-electric-blue);
+  color: #FFFFFF !important;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 86, 224, 0.38);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 2px solid rgba(255,255,255,0.4);
+  z-index: 10;
+  text-decoration: none;
+}
+
+.floating-contact-badge-bottom:hover {
+  background: var(--sura-electric-hover);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 86, 224, 0.5);
+}
+
+/* ==========================================================================
+   Sección: Opciones a un Clic (Services Grid)
+   ========================================================================== */
+.services-section {
+  margin-top: -3.8rem;
+  position: relative;
+  z-index: 15;
+  margin-bottom: var(--space-12);
+}
+
+.section-divider-heading {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: var(--space-8) 0 var(--space-6) 0;
+}
+
+.section-divider-heading::before,
+.section-divider-heading::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.section-divider-heading span {
+  padding: 0 var(--space-5);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+body.dark-theme .section-divider-heading span {
+  color: #CBD5E1;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-5);
+}
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1.6rem 1.2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sura-electric-blue), var(--sura-yellow));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--sura-electric-blue);
+  background: var(--bg-card-hover);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:active {
+  transform: translateY(-2px);
+}
+
+.service-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 86, 224, 0.08);
+  color: var(--sura-electric-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: var(--space-4);
+  transition: all var(--transition);
+}
+
+.service-card:hover .service-icon {
+  background: var(--sura-electric-blue);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 6px 16px rgba(0, 86, 224, 0.35);
+}
+
+.service-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.service-card p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Badge en tarjetas de servicios */
+.service-badge-pill {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.service-badge-pill.badge-urgent {
+  background: var(--sura-red-tint);
+  color: var(--sura-red);
+}
+
+.service-badge-pill.badge-online {
+  background: var(--sura-green-tint);
+  color: var(--sura-green);
+}
+
+/* ==========================================================================
+   Módulo de Trámites: Navegación Segmentada (Segmented Control UX)
+   ========================================================================== */
+.tramites-nav-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.tramites-segmented-control {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  gap: 0.35rem;
+  box-shadow: var(--shadow-sm);
+}
+
+body.dark-theme .tramites-segmented-control {
+  background: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+.tab-btn {
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--sura-electric-blue);
+  background: rgba(0, 86, 224, 0.05);
+}
+
+.tab-btn.active {
+  background: var(--sura-electric-blue);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 86, 224, 0.35);
+}
+
+body.dark-theme .tab-btn.active {
+  background: var(--sura-electric-blue);
+  color: #FFFFFF;
+}
+
+/* Contenedor de Cada Pestaña */
+.tab-content {
+  background: var(--bg-card);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-10);
+  transition: all var(--transition);
+}
+
+body.dark-theme .tab-content {
+  background: var(--bg-surface);
+  border-color: var(--border-color);
+}
+
+/* ==========================================================================
+   Botones Globales Corporativos SURA
+   ========================================================================== */
+.btn-primary {
+  background: linear-gradient(135deg, var(--sura-navy), var(--sura-blue));
+  color: #FFFFFF !important;
+  padding: 0.68rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  box-shadow: 0 4px 14px rgba(0, 43, 73, 0.2);
+  transition: all var(--transition);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--sura-blue), var(--sura-navy));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 43, 73, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--sura-yellow);
+  color: var(--sura-navy) !important;
+  padding: 0.68rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  box-shadow: 0 4px 14px rgba(255, 199, 44, 0.3);
+  transition: all var(--transition);
+}
+
+.btn-secondary:hover {
+  background: var(--sura-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 199, 44, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--sura-navy);
+  color: var(--sura-navy);
+  padding: 0.62rem 1.3rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: all var(--transition);
+}
+
+body.dark-theme .btn-outline {
+  border-color: var(--sura-yellow);
+  color: var(--sura-yellow);
+}
+
+.btn-outline:hover {
+  background: var(--sura-navy);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+body.dark-theme .btn-outline:hover {
+  background: var(--sura-yellow);
+  color: var(--sura-navy);
+}
+
+/* ==========================================================================
+   Widget Flotante Tibot y Canales de Contacto
+   ========================================================================== */
+.floating-contact-widget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1200;
+  cursor: pointer;
+}
+
+.contact-widget-pill {
+  background: var(--sura-electric-blue);
+  color: #FFFFFF;
+  padding: 0.6rem 1.25rem 0.6rem 1.45rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 86, 224, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all var(--transition);
+}
+
+.contact-widget-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0, 86, 224, 0.6);
+  background: var(--sura-electric-hover);
+}
+
+.contact-widget-icon {
+  background: #FFFFFF;
+  color: var(--sura-electric-blue);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Footer Oficial SURA
+   ========================================================================== */
+.footer {
+  background: var(--sura-navy-dark);
+  color: #CBD5E1;
+  padding: 4.5rem 0 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr 1.2fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+
+.footer-col h4 {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-4);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links a {
+  color: #CBD5E1;
+  font-size: 0.88rem;
+  transition: all var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--sura-yellow);
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Media Queries Responsivos (Móvil, Tablet, Escritorio)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .category-nav-links {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-badge-pill {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-desc-sismo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-carousel-dots {
+    justify-content: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-left-links {
+    display: none;
+  }
+
+  .topbar-content {
+    justify-content: flex-end;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-content {
+    padding: var(--space-5);
+  }
+
+  .tramites-segmented-control {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-sismo {
+    font-size: 1.95rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-contact-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .contact-widget-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}

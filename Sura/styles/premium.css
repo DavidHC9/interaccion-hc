@@ -1,0 +1,884 @@
+/* ==========================================================================
+   EPS SURA – Premium Visual Upgrade
+   Capa adicional de estilos de producción avanzada
+   ========================================================================== */
+
+/* ==========================================================================
+   1. HERO SECTION – Foto de fondo + overlay azul profundo
+   ========================================================================== */
+.hero-section {
+  background:
+    linear-gradient(135deg,
+      rgba(26, 35, 46, 0.90) 0%,
+      rgba(0, 86, 224, 0.82) 55%,
+      rgba(0, 163, 224, 0.78) 100%),
+    url('../images/hero-medical.jpg') center center / cover no-repeat;
+  min-height: 560px;
+  color: #FFFFFF;
+  padding: 4.5rem 0 6rem;
+}
+
+body.dark-theme .hero-section {
+  background:
+    linear-gradient(135deg,
+      rgba(14, 18, 23, 0.95) 0%,
+      rgba(26, 35, 46, 0.92) 50%,
+      rgba(0, 69, 181, 0.88) 100%),
+    url('../images/hero-medical.jpg') center center / cover no-repeat;
+}
+
+/* Fuerza texto blanco en hero */
+.hero-section .hero-title-sismo,
+.hero-section .hero-title-sismo .highlight-blue,
+.hero-section .hero-desc-sismo {
+  color: #FFFFFF;
+}
+
+.hero-section .hero-title-sismo .highlight-blue {
+  color: var(--sura-yellow);
+  text-shadow: 0 0 24px rgba(255, 199, 44, 0.5);
+}
+
+.hero-section .hero-badge-pill {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+}
+
+/* CTA secundario en hero oscuro */
+.hero-section .btn-sura-cta-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+.hero-section .btn-sura-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.28);
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Pedestal 3D sobre hero oscuro */
+.hero-section .sura-3d-pedestal-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Dots carrusel sobre fondo oscuro */
+.hero-section .hero-carousel-dots .dot { background: rgba(255,255,255,0.35); }
+.hero-section .hero-carousel-dots .dot.active { background: var(--sura-yellow); width: 28px; }
+
+/* ==========================================================================
+   2. TARJETAS DE SERVICIOS – Profundidad y micro-animaciones premium
+   ========================================================================== */
+.services-grid {
+  gap: 1.5rem;
+}
+
+.service-card {
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.8);
+  background: #FFFFFF;
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.06),
+    0 2px 4px -1px rgba(15, 23, 42, 0.04),
+    0 0 0 1px rgba(226, 232, 240, 0.8);
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem 1.4rem;
+}
+
+body.dark-theme .service-card {
+  background: var(--bg-surface);
+  border-color: var(--border-color);
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.2),
+    0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 20px 40px -8px rgba(0, 86, 224, 0.22),
+    0 8px 16px -4px rgba(0, 86, 224, 0.12),
+    0 0 0 2px rgba(0, 86, 224, 0.3);
+  border-color: rgba(0, 86, 224, 0.25);
+}
+
+.service-card:active { transform: translateY(-3px) scale(1.005); }
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 86, 224, 0.08), rgba(0, 163, 224, 0.12));
+  color: var(--sura-electric-blue);
+  font-size: 1.7rem;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 86, 224, 0.12);
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--sura-electric-blue), var(--sura-accent-cyan));
+  color: #FFFFFF;
+  transform: scale(1.12) rotate(-4deg);
+  box-shadow: 0 8px 24px rgba(0, 86, 224, 0.4);
+}
+
+.service-card h3 {
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+
+.service-card p {
+  font-size: 0.83rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+/* Gradiente top-bar on hover */
+.service-card::before {
+  height: 5px;
+  background: linear-gradient(90deg, var(--sura-electric-blue), var(--sura-accent-cyan), var(--sura-yellow));
+  border-radius: 20px 20px 0 0;
+}
+
+/* ==========================================================================
+   3. SECCIÓN "NUESTRO EQUIPO" – Foto de médicos con texto overlay
+   ========================================================================== */
+.team-section {
+  position: relative;
+  margin: 0 0 5rem;
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: var(--shadow-xl);
+}
+
+.team-photo-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../images/doctors-team.jpg') center center / cover no-repeat;
+  transform: scale(1.04);
+  transition: transform 0.6s ease;
+}
+.team-section:hover .team-photo-bg { transform: scale(1); }
+
+.team-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(26, 35, 46, 0.92) 0%,
+    rgba(0, 86, 224, 0.75) 55%,
+    rgba(0, 163, 224, 0.35) 100%);
+}
+
+.team-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: 3.5rem 4rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.team-text-block { max-width: 520px; }
+
+.team-kpi-strip {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-kpi {
+  text-align: center;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 1.2rem 1.6rem;
+  min-width: 110px;
+  transition: all 0.25s ease;
+}
+
+.team-kpi:hover {
+  background: rgba(255, 199, 44, 0.2);
+  border-color: rgba(255, 199, 44, 0.4);
+  transform: translateY(-4px);
+}
+
+.team-kpi .kpi-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--sura-yellow);
+  line-height: 1;
+  display: block;
+}
+
+.team-kpi .kpi-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+/* ==========================================================================
+   4. SECCIÓN "TURNO VIRTUAL" – Módulo Premium Rediseñado
+   ========================================================================== */
+.turno-virtual-module {
+  margin: 0 0 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Tarjeta izquierda: Estado del Turno */
+.turno-ticket-card {
+  background:
+    linear-gradient(145deg,
+      rgba(26, 35, 46, 0.97) 0%,
+      rgba(18, 24, 32, 1) 100%),
+    url('../images/turno-virtual-bg.jpg') center / cover no-repeat;
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 86, 224, 0.2);
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+/* Glow de fondo radial */
+.turno-ticket-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: 50%;
+  transform: translateX(-50%);
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(0, 86, 224, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.turno-ticket-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 50%;
+  transform: translateX(-50%);
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(255, 199, 44, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.turno-label {
+  position: relative; z-index: 1;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--sura-accent-cyan);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.turno-label::before, .turno-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  display: block;
+  width: 40px;
+}
+
+/* El número del turno – HIGHLIGHT principal */
+.turno-number-badge {
+  position: relative; z-index: 1;
+  background:
+    linear-gradient(145deg, rgba(0, 86, 224, 0.25), rgba(0, 163, 224, 0.15));
+  border: 2px solid rgba(0, 163, 224, 0.5);
+  border-radius: 20px;
+  padding: 1.2rem 3rem;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 40px rgba(0, 86, 224, 0.35),
+    0 0 80px rgba(0, 86, 224, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  animation: turnoGlow 3s ease-in-out infinite;
+}
+
+@keyframes turnoGlow {
+  0%, 100% { box-shadow: 0 0 40px rgba(0, 86, 224, 0.35), 0 0 80px rgba(0, 86, 224, 0.15), inset 0 1px 0 rgba(255,255,255,0.15); }
+  50% { box-shadow: 0 0 60px rgba(0, 163, 224, 0.55), 0 0 100px rgba(0, 86, 224, 0.25), inset 0 1px 0 rgba(255,255,255,0.2); }
+}
+
+.turno-number-value {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: -2px;
+  display: block;
+  text-shadow: 0 0 30px rgba(0, 163, 224, 0.8);
+}
+
+.turno-number-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--sura-accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Metadata del turno */
+.turno-meta {
+  position: relative; z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.turno-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.turno-meta-row .meta-key {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.turno-meta-row .meta-key i { color: var(--sura-accent-cyan); font-size: 0.7rem; }
+.turno-meta-row .meta-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Barra de progreso de espera */
+.turno-wait-bar-container {
+  position: relative; z-index: 1;
+  width: 100%;
+}
+
+.turno-wait-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.turno-wait-label span:last-child { color: var(--sura-yellow); }
+
+.turno-wait-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.turno-wait-fill {
+  height: 100%;
+  width: 35%;
+  background: linear-gradient(90deg, var(--sura-electric-blue), var(--sura-accent-cyan));
+  border-radius: 100px;
+  animation: waitFill 8s ease-in-out infinite alternate;
+}
+
+@keyframes waitFill {
+  0% { width: 30%; }
+  100% { width: 65%; }
+}
+
+/* Panel derecho: controles del turno virtual */
+.turno-controls-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+body.dark-theme .turno-controls-card {
+  background: var(--bg-surface);
+}
+
+.turno-controls-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.turno-controls-card h3 i { color: var(--sura-electric-blue); }
+
+.turno-dept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.turno-dept-btn {
+  padding: 0.95rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  background: var(--bg-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+body.dark-theme .turno-dept-btn { background: #121820; }
+
+.turno-dept-btn i {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  transition: all 0.22s ease;
+}
+
+.turno-dept-btn span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: all 0.22s ease;
+}
+
+.turno-dept-btn:hover,
+.turno-dept-btn.selected {
+  border-color: var(--sura-electric-blue);
+  background: rgba(0, 86, 224, 0.06);
+}
+
+.turno-dept-btn:hover i,
+.turno-dept-btn.selected i { color: var(--sura-electric-blue); transform: scale(1.15); }
+.turno-dept-btn:hover span,
+.turno-dept-btn.selected span { color: var(--sura-electric-blue); }
+
+.turno-dept-btn.selected {
+  box-shadow: 0 0 0 3px rgba(0,86,224,0.2);
+}
+
+.turno-info-strip {
+  background: linear-gradient(135deg, rgba(255, 199, 44, 0.1), rgba(255, 140, 0, 0.08));
+  border: 1px solid rgba(255, 199, 44, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.turno-info-strip i { color: var(--sura-yellow); margin-top: 2px; flex-shrink: 0; }
+.turno-info-strip p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.45; margin: 0; }
+
+/* ==========================================================================
+   5. SECCIÓN APP MÓVIL – Mockup + Badges
+   ========================================================================== */
+.app-promo-section {
+  position: relative;
+  margin: 0 0 5rem;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #121820 0%, #1A232E 50%, #0056E0 100%);
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  box-shadow:
+    0 24px 60px rgba(0, 86, 224, 0.25),
+    0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.app-promo-section::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: 200px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0, 163, 224, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.app-promo-text { max-width: 420px; }
+.app-promo-text h2 {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+.app-promo-text h2 span { color: var(--sura-yellow); }
+.app-promo-text p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 2rem; line-height: 1.65; }
+
+.app-store-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.app-store-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  text-decoration: none;
+}
+
+.app-store-badge:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.4);
+  transform: translateY(-2px);
+}
+
+.app-store-badge i { font-size: 1.6rem; color: #FFFFFF; }
+.app-store-badge .badge-text { display: flex; flex-direction: column; }
+.app-store-badge .badge-text small { font-size: 0.68rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+.app-store-badge .badge-text strong { font-size: 1rem; color: #FFFFFF; font-weight: 700; }
+
+.app-mockup-img {
+  position: relative;
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.app-mockup-img img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow:
+    0 32px 64px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255,255,255,0.1);
+  animation: floatPhone 5s ease-in-out infinite;
+}
+
+@keyframes floatPhone {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-16px) rotate(-1.5deg); }
+}
+
+/* ==========================================================================
+   6. PESTAÑAS DE TRÁMITES – Contenedor más rico
+   ========================================================================== */
+.tramites-section-wrapper {
+  background: var(--bg-main);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: inset 0 2px 6px rgba(15,23,42,0.04);
+  border: 1px solid var(--border-color);
+  margin-bottom: 5rem;
+}
+
+body.dark-theme .tramites-section-wrapper {
+  background: rgba(14, 18, 23, 0.5);
+}
+
+.tramites-segmented-control {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 0.4rem;
+  display: inline-flex;
+  gap: 0.4rem;
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  border-radius: 10px;
+  padding: 0.7rem 1.45rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--sura-navy), var(--sura-electric-blue));
+  color: #FFFFFF;
+  box-shadow:
+    0 4px 14px rgba(0, 86, 224, 0.35),
+    0 1px 3px rgba(0,0,0,0.15);
+}
+
+.tab-content {
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  box-shadow:
+    0 4px 8px -2px rgba(15,23,42,0.06),
+    0 2px 4px -1px rgba(15,23,42,0.04);
+  margin-top: 1.5rem;
+}
+
+body.dark-theme .tab-content { background: var(--bg-surface); }
+
+/* Empty state mejorado */
+.empty-state-box {
+  padding: 4rem 2rem;
+}
+.empty-state-box .empty-icon-wrap {
+  width: 80px; height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, rgba(0,86,224,0.08), rgba(0,163,224,0.12));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.empty-state-box .empty-icon-wrap i {
+  font-size: 2rem;
+  color: var(--sura-electric-blue);
+  margin: 0;
+}
+.empty-state-box h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.empty-state-box p { font-size: 0.9rem; color: var(--text-secondary); }
+
+/* ==========================================================================
+   7. CARDS DE CITAS Y SEDES – Refinamiento
+   ========================================================================== */
+.appointment-card {
+  border-radius: 16px;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-card);
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.22s ease;
+  box-shadow: var(--shadow-xs);
+}
+
+.appointment-card:hover {
+  border-color: var(--sura-green);
+  box-shadow:
+    0 6px 16px rgba(0, 168, 89, 0.1),
+    0 2px 4px rgba(0,0,0,0.04);
+  transform: translateX(4px);
+}
+
+.sede-card {
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+.sede-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 32px rgba(0, 86, 224, 0.12),
+    0 0 0 2px rgba(0, 86, 224, 0.25);
+}
+
+/* ==========================================================================
+   8. FOOTER – Estilos premium
+   ========================================================================== */
+.footer {
+  background:
+    linear-gradient(180deg, #0E1217 0%, #121820 100%);
+  border-top: 1px solid rgba(0, 86, 224, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 300px;
+  background: radial-gradient(ellipse, rgba(0,86,224,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   9. HEADER / TOPBAR – Detalles adicionales
+   ========================================================================== */
+.topbar {
+  background: linear-gradient(90deg, #363C42, #2E343A);
+}
+
+.navbar-sticky {
+  box-shadow:
+    0 4px 6px -1px rgba(15,23,42,0.06),
+    0 2px 4px -1px rgba(15,23,42,0.03),
+    0 1px 0 rgba(226,232,240,0.8);
+}
+
+body.dark-theme .navbar-sticky {
+  box-shadow:
+    0 4px 16px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* ==========================================================================
+   10. MODALES – Refinamiento adicional
+   ========================================================================== */
+.modal-container {
+  border-radius: 24px;
+}
+
+.modal-header {
+  border-radius: 24px 24px 0 0;
+  background: linear-gradient(90deg,
+    rgba(0, 86, 224, 0.05) 0%,
+    transparent 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   11. DASHBOARD DEL AFILIADO – Barra más elegante
+   ========================================================================== */
+.affiliate-dashboard-section {
+  background:
+    linear-gradient(90deg,
+      rgba(26, 35, 46, 0.97) 0%,
+      rgba(0, 86, 224, 0.95) 60%,
+      rgba(0, 163, 224, 0.90) 100%);
+  border-bottom: 3px solid var(--sura-yellow);
+  box-shadow: 0 4px 20px rgba(0, 86, 224, 0.3);
+}
+
+/* ==========================================================================
+   12. TIBOT CHATBOT – Look premium
+   ========================================================================== */
+.tibot-box {
+  border-radius: 20px;
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.25),
+    0 0 0 1px rgba(255,255,255,0.08);
+}
+
+body.dark-theme .tibot-box {
+  background: #181E26;
+  border-color: #2A323D;
+}
+
+.tibot-header {
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, #121820 0%, #1A232E 60%, #0056E0 100%);
+}
+
+/* ==========================================================================
+   13. SECTION TAG – Estilos premium
+   ========================================================================== */
+.section-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+  padding: 0.38rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 163, 224, 0.15);
+}
+
+/* ==========================================================================
+   14. BOTONES GLOBALES – Elevación extra
+   ========================================================================== */
+.btn-primary {
+  box-shadow:
+    0 4px 14px rgba(26, 35, 46, 0.25),
+    0 1px 3px rgba(0,0,0,0.1);
+}
+.btn-primary:hover {
+  box-shadow:
+    0 8px 24px rgba(0, 86, 224, 0.35),
+    0 2px 6px rgba(0,0,0,0.12);
+}
+
+.btn-secondary {
+  box-shadow:
+    0 4px 14px rgba(255, 199, 44, 0.35),
+    0 1px 3px rgba(0,0,0,0.08);
+}
+.btn-secondary:hover {
+  box-shadow:
+    0 8px 24px rgba(255, 199, 44, 0.5),
+    0 2px 6px rgba(0,0,0,0.1);
+}
+
+.btn-sura-cta {
+  box-shadow:
+    0 8px 24px rgba(0, 86, 224, 0.4),
+    0 2px 6px rgba(0,0,0,0.12);
+  letter-spacing: 0.8px;
+}
+.btn-sura-cta:hover {
+  box-shadow:
+    0 14px 36px rgba(0, 86, 224, 0.55),
+    0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ==========================================================================
+   15. RESPONSIVE EXTRAS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .turno-virtual-module { grid-template-columns: 1fr; }
+  .turno-ticket-card { min-height: 280px; }
+  .turno-number-value { font-size: 3.5rem; }
+  .team-content { padding: 2.5rem 2rem; }
+  .team-kpi-strip { gap: 1rem; }
+  .app-promo-section { flex-direction: column; align-items: flex-start; padding: 2.5rem; }
+  .app-mockup-img { display: none; }
+}
+
+@media (max-width: 768px) {
+  .tramites-section-wrapper { padding: 1.5rem; }
+  .turno-dept-grid { grid-template-columns: 1fr 1fr; }
+  .team-content { flex-direction: column; }
+  .team-kpi-strip { justify-content: center; }
+  .team-section { border-radius: 18px; }
+  .app-promo-section { border-radius: 18px; padding: 2rem; }
+}
